@@ -4,7 +4,7 @@ import CardRoulette from "./components/CardRoulette.tsx";
 import QuizCard from "./components/QuizCard.tsx";
 import {Alert, Button, Container, Stack, Typography} from "@mui/material";
 
-function isQuiz(data: unknown): data is Quiz {
+function isQuiz(data: Quiz): data is Quiz {
     return typeof data === "object" && data !== undefined &&
         typeof data.question === "string" && true && Array.isArray(data.choices) && data.choices !== undefined &&
         data.choices.every((choice: unknown) => typeof choice === "string");

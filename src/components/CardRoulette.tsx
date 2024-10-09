@@ -66,7 +66,7 @@ function CardRoulette<T>(props: CardRouletteProps<T>): JSX.Element {
         <Box display="flex" justifyContent="center" alignItems="center">
             <Button variant="contained" color="primary" onClick={handleClick} disabled={isSpinning}>NEXT</Button>
         </Box>
-        {remainingCardDataRef.current.length > 0 && currentIndex > -1 ? <Card<T> data={remainingCardDataRef.current[currentIndex]}/> : null}
+        {remainingCardDataRef.current.length > 0 && currentIndex > -1 ? <Card data={remainingCardDataRef.current[currentIndex]}/> : null}
     </>;
 }
 export default CardRoulette;
