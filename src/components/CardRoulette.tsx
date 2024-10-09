@@ -11,7 +11,7 @@ type CardRouletteProps<T> = {
 function CardRoulette<T>(props: CardRouletteProps<T>): JSX.Element {
     const {cardData, cardComponent: Card} = props;
 
-    const duration = 4000; // ルーレット実行時間
+    const duration = 3000; // ルーレット実行時間
 
     const [currentIndex, setCurrentIndex] = useState(-1); // 初期状態は -1 とする
     const [isSpinning, setIsSpinning] = useState(false);
@@ -37,11 +37,9 @@ function CardRoulette<T>(props: CardRouletteProps<T>): JSX.Element {
         }
 
         // 数学的に間隔を算出しようと思ったが、見た感じがよければどのような数値でも問題無いので、
-        // ちょっと雑だが、基本 0.01 秒毎に更新して、その後、0.25 秒毎 4回 -> 0.5 秒毎 2回 と更新間隔をあけることにする
+        // ちょっと雑だが、基本 0.01 秒毎に更新して、その後、0.25 秒毎 6回にする
         let interval = 50;
-        if (remainTime <= 1000) {
-            interval = 500;
-        } else if (remainTime <= 2500) {
+        if (remainTime <= 1500) {
             interval = 250;
         }
 
