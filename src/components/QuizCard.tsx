@@ -10,7 +10,7 @@ function QuizCard(props: QuizCardProps): JSX.Element {
     return (
         <Paper elevation={6} sx={{mt: 5}}>
             <Box sx={{p: 3, bgcolor: 'secondary.dark'}}>
-                <Typography variant="h1" component="h1" fontWeight="bold" color="common.white">{quiz.question}</Typography>
+                <Typography variant="h1" component="h1" fontWeight="bold" color="common.white">Q. {quiz.question}</Typography>
             </Box>
             <Box sx={{p: 3}}>
                 <List>
